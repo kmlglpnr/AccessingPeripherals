@@ -1,6 +1,6 @@
 package com.example;
 
-import org.jfugue.*;
+import org.jfugue.player.Player;
 
 import java.awt.*;
 
@@ -41,8 +41,11 @@ public class MouseMusic implements Runnable{
 
 
            // Pattern pattern = new Pattern("X[Volume]=" + volume + " [" + pitch + "]");
-
-            player.play("X[Volume]=" + volume + " [" + pitch + "]");
+            // Since I am using jFugue v5 I, remove the brackets around note numbers
+            //Brackets should be used in cases where the contents of t
+            // he brackets is a string representation of a value that needs to be looked up
+            // (e.g., I[Piano], T[Allegro])
+            player.play("XVolume =" + volume + "[Violin] " + pitch + "[Violin]");
 
         }
     }
